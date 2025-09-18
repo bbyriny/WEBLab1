@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Labwork1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<table class="header">
+    <tr>
+        <td colspan="3" class="header-cell">
+            <h1>Байбурина Карина Ильшатовна</h1>
+            <p>Группа: P3206 | Вариант: 465105</p>
+        </td>
+    </tr>
+</table>
+
+<table class="main-table">
+    <tr>
+        <td class="form-cell">
+            <form id="pointForm" method="post" onsubmit="return checkForm(this)">
+            <table class="form-table">
+                    <tr>
+                        <td>Выбери X:</td>
+                        <td>
+                            <select name="x" id="xInput">
+                                <option value="-2">-2</option>
+                                <option value="-1.5">-1.5</option>
+                                <option value="-1">-1</option>
+                                <option value="-0.5">-0.5</option>
+                                <option value="0">0</option>
+                                <option value="0.5">0.5</option>
+                                <option value="1">1</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2">2</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Впиши Y:</td>
+                        <td><input type="text" id="yInput" name="y" placeholder="от -5 до 3"></td>
+                    </tr>
+                    <tr>
+                        <td>Выбери R:</td>
+                        <td>
+                            <select name="r" id="rInput">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit">Проверить</button>
+            </form>
+            <div id="mainMessage" style="margin-top:10px;"></div>
+        </td>
+
+        <td class="graph-cell">
+            <table class="graph-table">
+                <tr>
+                    <td>
+                        <canvas id="canvasPlot" width="400" height="400"></canvas>
+                    </td>
+                    <td class="image-cell">
+                        <img src="minion.jpg" alt="Картинка" class="sidebar-image">
+                        <br>
+                        <button id="musicToggle">Включить музыку</button>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<audio id="backgroundMusic" loop>
+    <source src="banana.mp3" type="audio/mpeg">
+</audio>
+
+<h2>Результаты</h2>
+
+<button id="clearTableButton" style="margin-bottom:10px; padding:5px 10px;">Очистить таблицу</button>
+
+<table id="results">
+    <thead>
+    <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Попал?</th>
+        <th>Время</th>
+        <th>Время работы скрипта (мс)</th>
+    </tr>
+    </thead>
+    <tbody id="Tbody"></tbody>
+</table>
+
+</body>
+</html>
